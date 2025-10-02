@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow Studio - Web DAW</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <header class="daw-header">
+      <div class="header-left">
+        <h1>Flow Studio</h1>
+        <div class="transport-controls">
+          <button id="play-btn" class="transport-btn">▶</button>
+          <button id="stop-btn" class="transport-btn">■</button>
+          <button id="record-btn" class="transport-btn">●</button>
+          <span id="bpm-display">120 BPM</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="btn-secondary">Export</button>
+        <button class="btn-secondary">Settings</button>
+      </div>
+    </header>
+
+    <div class="daw-container">
+      <aside class="sidebar-left">
+        <div class="panel instruments-panel">
+          <h3>Instruments</h3>
+          <div id="instrument-list" class="instrument-list"></div>
+        </div>
+        <div class="panel mixer-panel">
+          <h3>Mixer</h3>
+          <div id="mixer-channels" class="mixer-channels"></div>
+        </div>
+      </aside>
+
+      <main class="main-workspace">
+        <div class="playlist-header">
+          <h2>Playlist</h2>
+          <div class="timeline-controls">
+            <button class="btn-icon">Snap</button>
+            <select id="grid-size">
+              <option value="1/16">1/16</option>
+              <option value="1/8">1/8</option>
+              <option value="1/4" selected>1/4</option>
+            </select>
+          </div>
+        </div>
+        <div id="playlist" class="playlist"></div>
+        
+        <div class="piano-roll-header">
+          <h2>Piano Roll</h2>
+        </div>
+        <div id="piano-roll" class="piano-roll"></div>
+      </main>
+
+      <aside class="sidebar-right">
+        <div class="panel pattern-panel">
+          <h3>Patterns</h3>
+          <div id="pattern-list" class="pattern-list"></div>
+          <button id="add-pattern-btn" class="btn-primary">+ New Pattern</button>
+        </div>
+        <div class="panel effects-panel">
+          <h3>Effects</h3>
+          <div id="effects-rack" class="effects-rack"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
